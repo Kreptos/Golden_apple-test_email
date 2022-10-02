@@ -6,6 +6,14 @@
 	<title>HTML Template</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<style>
+        @font-face {
+            font-family: "Graphik LCG";
+            src: url('fonts/GraphikLCG-Regular.woff') format('woff'), url('fonts/GraphikLCG-Regular.woff2') format('woff2');
+        }
+        @font-face{
+            font-family: "Helvetica Neue";
+            src: url('fonts/HelveticaNeueCyr-Roman.woff') format('woff');
+        }
 		body {
 			width: 100% !important;
 			-webkit-text-size-adjust: 100%;
@@ -13,11 +21,11 @@
 			margin: 0;
 			padding: 0;
 			line-height: 100%;
-            font-family: Helvetica, Arial, sans-serif;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
             color: #000000;
 		}
 
-		[style*="Open Sans"] {font-family: 'Open Sans', arial, sans-serif !important;}
+		[style*="Helvetica"] {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif!important; }
 
 		img {
 			outline: none;
@@ -43,10 +51,33 @@
 			mso-table-rspace: 0pt;
 		}
         .header-td{
-            padding-top: 60px;
+            padding-top: 53px;
+            font-size: 12px;
+            font-family: 'Graphik LCG', Helvetica, Arial, sans-serif;
+        }
+        .header-td table td{
+            padding-right: 30.8px;
+            display: inline-block;
+        }
+        .header-td table td.logo{
+            padding-left: 34px;
+        }
+        .header-td table td.logo{
+            position: relative;
+            bottom: 3px;
+        }
+        .header-td table td:last-child{
+            padding-right: 0;
+        }
+        .header-td table{
+            padding-left: 66px;
         }
         .logo_mobile{
             display: none;
+        }
+        .label{
+            width: 224px;
+            height: 55px;
         }
         .table-580{
             width: 580px;
@@ -70,6 +101,7 @@
         .suptitle{
             font-size: 14px;
             line-height: 130%;
+            letter-spacing: 1.5px;
         }
         .suptitle-2{
             font-size: 11px;
@@ -79,6 +111,8 @@
             font-size: 20px;
             line-height: 140%;
             font-weight: 400;
+            margin: 0;
+            letter-spacing: -0.2px;
         }
         .btn{
             color: #ffffff;
@@ -91,13 +125,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            letter-spacing: 1.5px;
         }
         .btn_white{
             background: #ffffff;
             color: #000000;
-        }
-        .purchase{
-
+            width: 280px;
+            letter-spacing: 1.3px;
         }
         .purchase__mobile{
             display: none;
@@ -110,7 +144,7 @@
         .old_price{
             color: #B3B3B3;
             position: relative;
-            margin-left: 20px;
+            margin-left: 14px;
         }
         .old_price:after{
             content: '';
@@ -119,7 +153,7 @@
             background: #B3B3B3;
             position: absolute;
             right: -4px;
-            top: 12px;
+            top: 13px;
         }
         .footer{
             background: #000000;
@@ -130,30 +164,41 @@
             color: #ffffff;
         }
         .socials{
-            display: flex;
-            justify-content: space-between;
+            display: inline-block;
         }
         .socials td{
             align-self: center;
+            padding-right: 41px;
         }
         .socials_column{
             display: flex;
             justify-content: space-between;
         }
+        .socials-2{
+            display: inline-block;
+        }
+        .socials-2 td:first-child{
+            padding-right: 31px;
+            padding-left: 19px;
+        }
         .footer__mobile{
             display: none;
-            /* width: 100%; */
-        }
-        .footer__mobile td{
-            width: 25%;
         }
         .mobile{
             display: none;
         }
         .desktop{
-            display: inherit;
+            display: block;
         }
-
+        .banner-1{
+            position: relative;
+            overflow: hidden;
+            height: 335px;
+        }
+        .banner-1 img{
+            width: 580px;
+            height: 335px;
+        }
 
         @media (max-width: 600px){
             .table-580{
@@ -161,8 +206,8 @@
             }
             .wrapper{
                 width: 100%;
-                padding-left: 20px;
-                padding-right: 20px;
+                padding-left: 16px;
+                padding-right: 16px;
             }
             .footer__wrapper{
                 width: 100%;
@@ -172,19 +217,15 @@
             .footer__inner{
                 display: none;
             }
-            .footer__mobile{
-                display: grid;
-            }
-            .socials_column{
-                display: flex;
-                flex-direction: column;
-            }
             .purchase{
                 display: none;
             }
             .purchase__mobile{
-                display: flex;
-                justify-content: center;
+                display: block;
+            }
+            .purchase__mobile tbody{
+                display: table;
+                width: 100%;
             }
             .btn{
                 width: 100%;
@@ -196,7 +237,7 @@
                 width: 100%;
             }
             .title-1, .title-2{
-                font-size: 25px;
+                font-size: 30px;
             }
             .title-3{
                 font-size: 18px;
@@ -210,9 +251,12 @@
             .header-td td{
                 text-align: center;
             }
+            .header-td td:nth-child(7){
+                padding-right: 0;
+            }
             .header-td tr{
-                display: flex;
-                justify-content: space-around;
+                display: inline-block;
+                width: 100%;
             }
             .header-td .hidden{
                 display: none;
@@ -222,7 +266,7 @@
             }
             .logo_mobile{
                 display: inherit;
-                padding-bottom: 25px;
+                padding-bottom: 23px;
             }
             .header-td{
                 padding-top: 30px;
@@ -247,6 +291,45 @@
                 right: -5px;
                 top: 8px;
             }
+            .label{
+                height: 47px;
+                width: 185px;
+            }
+            .header-td table td{
+                padding-right: 12px;
+            }
+            .banner-1{
+            height: 347px;
+            }
+            .banner-1 img{
+                height: 347px;
+            }
+            .btn_wrapper{
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+            .footer__mobile{
+                display: block;
+            }
+            .footer__mobile tbody{
+                display: table;
+                width: 100%;
+            }
+            .social__mobile-1{
+                display: inline-block;
+                width: 100%;
+            }
+            .social__mobile-1 td{
+                padding-right: 43px;
+            }
+            .social__mobile-1 td:last-child{
+                padding-right: 0;
+            }
+            .social__mobile-2{
+                display: inline-block;
+                width: 100%;
+            }
+            
         }
         @media (max-width: 580px){
             .calc-img{
@@ -268,38 +351,44 @@
             <td>
                 <table class="main table-580" cellpadding="0" cellspacing="0" align="center">
                     <tr>
-                        <td class="header-td ">
+                        <td class="header-td wrapper">
                             <table cellpadding="0" cellspacing="0" class="table-580" align="center">
-                                <tr class="logo_mobile">
+                                <tr class="logo_mobile" width="25" style="text-align: center;">
                                     <td><img src="img/logo_desktop.png" width="25" height="25"></td>
                                 </tr>
-                                <tr>
-                                    <td>новинки</td>
-                                    <td>азия</td>
-                                    <td>уход</td>
-                                    <td class="hidden">макияж</td>
-                                    <td class="hidden">парфюм</td>
-                                    <td>бренды</td>
-                                    <td style="color: #F10D48">распродажа</td>
-                                    <td class="hidden"><img src="img/logo_desktop.png" width="25" height="25"></td>
+                                <tr align="center">
+                                    <td><a href="#">новинки</a></td>
+                                    <td><a href="#">азия</a></td>
+                                    <td><a href="#">уход</a></td>
+                                    <td class="hidden"><a href="#">макияж</a></td>
+                                    <td class="hidden"><a href="#">парфюм</a></td>
+                                    <td><a href="#">бренды</a></td>
+                                    <td><a href="#" style="color: #F10D48">распродажа</a></td>
+                                    <td class="hidden logo"><a href="#"><img src="img/logo_desktop.png" width="25" height="25"></a></td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
-                    <tr>
-                        <td height="60"></td>
+                    <tr class="desktop">
+                        <td height="58"></td>
                     </tr>
-                    <tr>
-                        <td align="center">
-                            <img src="img/label.png" width="224" height="55">
-                        </td>
-                    </tr>
-                    <tr>
+                    <tr class="mobile">
                         <td height="40"></td>
                     </tr>
                     <tr>
-                        <td align="center" style="position:relative; overflow: hidden; height: 335px">
-                            <img class="calc-img" src="img/Банер_desktop_2_1.jpg" style="width: 580px; height: 335px;">
+                        <td align="center">
+                            <img class="label"src="img/label.png" width="224" height="55">
+                        </td>
+                    </tr>
+                    <tr class="desktop">
+                        <td height="40"></td>
+                    </tr>
+                    <tr class="mobile">
+                        <td height="19"></td>
+                    </tr>
+                    <tr>
+                        <td align="center" class="banner-1">
+                            <img class="calc-img" src="img/Банер_desktop_2_1.jpg">
                         </td>
                     </tr>
                     <tr>
@@ -311,14 +400,23 @@
                         </td>
                     </tr>
                     <tr>
+                        <td height="14"></td>
+                    </tr>
+                    <tr>
                         <td height="15" align="center" class="wrapper">
                             <p>
-                                Каждой женщине, которая не боится быть сильной и решительной, которая следует по пути оптимизма и уверенности, Lancôme посвящает Idôle.
+                                Каждой женщине, которая не боится быть сильной <br/>и решительной, которая следует по пути оптимизма <br/>и уверенности, Lancôme посвящает Idôle.
                             </p>
                         </td>
                     </tr>
+                    <tr class="desktop">
+                        <td height="30"></td>
+                    </tr>
+                    <tr class="mobile">
+                        <td height="4"></td>
+                    </tr>
                     <tr>
-                        <td align="center" class="wrapper">
+                        <td align="center" class="btn_wrapper">
                             <a href="#" class="btn">КУПИТЬ НОВИНКУ</a>
                         </td>
                     </tr>
@@ -333,22 +431,36 @@
                             ТЕХНОЛОГИЧЕСКОЕ ДОСТИЖЕНИЕ
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="desktop">
                         <td height="10"></td>
                     </tr>
-                    <tr>
+                    <tr class="mobile">
+                        <td height="6"></td>
+                    </tr>
+                    <tr class="desktop" align="center">
                         <td align="center" class="title-2 wrapper">
-                            САМЫЙ ТОНКИЙ ФЛАКОН В МИРЕ
+                            САМЫЙ  ТОНКИЙ  ФЛАКОН <br/>В МИРЕ
+                        </td>
+                    </tr>
+                    <tr class="mobile" align="center">
+                        <td align="center" class="title-2 wrapper" style="font-size: 25px;">
+                            САМЫЙ  ТОНКИЙ  ФЛАКОН В МИРЕ
                         </td>
                     </tr>
                     <tr>
                         <td height="10"></td>
                     </tr>
-                    <tr>
+                    <tr class="desktop">
                         <td class="wrapper"><img src="img/Банер_desktop_2_2.jpg" style="max-width: 580px; width: 100%;"></td>
                     </tr>
-                    <tr>
+                    <tr class="mobile">
+                        <td class="wrapper"><img src="img/Банер_mobile_1_2.jpg" style="max-width: 580px; width: 100%;"></td>
+                    </tr>
+                    <tr class="desktop">
                         <td height="20"></td>
+                    </tr>
+                    <tr class="mobile">
+                        <td height="11"></td>
                     </tr>
                     <tr>
                         <td align="center" class="wrapper">
@@ -361,7 +473,7 @@
                         <td height="110"></td>
                     </tr>
                     <tr class="mobile">
-                        <td height="60"></td>
+                        <td height="85"></td>
                     </tr>
                     <tr>
                         <td class="suptitle wrapper" align="center">
@@ -371,20 +483,30 @@
                     <tr>
                         <td height="10"></td>
                     </tr>
-                    <tr>
+                    <tr class="desktop" align="center">
                         <td align="center" class="title-1 wrapper">
                             НЕОРДИНАРНОСТЬ  
                             <br/>
                             И СМЕЛОСТЬ
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="mobile" align="center">
+                        <td align="center" class="title-1 wrapper" style="font-size: 25px;">
+                            НЕОРДИНАРНОСТЬ  
+                            <br/>
+                            И СМЕЛОСТЬ
+                        </td>
+                    </tr>
+                    <tr class="desktop">
                         <td height="10"></td>
+                    </tr>
+                    <tr class="mobile">
+                        <td height="15"></td>
                     </tr>
                     <tr>
                         <td align="center" class="wrapper">
                             <p>
-                                Чистые ноты нового аромата Idôle раскрываются на обнаженной коже через цветочную дымку, где в главной роли выступает роза из Испарты.
+                                Чистые ноты нового аромата Idôle раскрываются <br/> на обнаженной коже через цветочную дымку, где в главной роли выступает роза из Испарты.
                             </p>
                         </td>
                     </tr>
@@ -405,33 +527,33 @@
                                     <td height="25"></td>
                                 </tr>
                                 <tr>
-                                    <td align="right" style="padding-right:20px" class="suptitle-2">ПАРФЮМЕРНАЯ ВОДА</td>
-                                    <td align="left" style="padding-left:20px" class="suptitle-2">ПАРФЮМЕРНАЯ ВОДА</td>
+                                    <td align="right" style="padding-right:20px; letter-spacing: 1.5px;" class="suptitle-2">ПАРФЮМЕРНАЯ ВОДА</td>
+                                    <td align="left" style="padding-left:20px; letter-spacing: 1.5px;" class="suptitle-2">ПАРФЮМЕРНАЯ ВОДА</td>
                                 </tr>
                                 <tr>
-                                    <td height="1"></td>
+                                    <td height="9"></td>
                                 </tr>
                                 <tr>
-                                    <td align="right" style="padding-right:20px" class="title-3">Lancôme Idôle / 50 мл</td>
-                                    <td align="left" style="padding-left:20px" class="title-3">Lancôme Idôle / 25 мл</td>
+                                    <td align="right" style="padding-right:20px; font-size: 20px;" class="title-3"><span style="font-size: 23px; letter-spacing: 0.4px;"> <span style="text-transform: uppercase; font-size: 24px;">Lancôme</span> Idôle</span> / 50 мл</td>
+                                    <td align="left" style="padding-left:20px; font-size: 20px;" class="title-3"><span style="font-size: 23px; letter-spacing: 0.4px;"> <span style="text-transform: uppercase; font-size: 24px;">Lancôme</span> Idôle</span> / 25 мл</td>
                                 </tr>
                                 <tr>
-                                    <td height="4"></td>
+                                    <td height="6"></td>
                                 </tr>
                                 <tr>
                                     <td class="price" align="right" style="padding-right:25px">6 390 ₽ <span class="old_price">8 520 ₽</span></td>
                                     <td class="price" align="left" style="padding-left:20px">3 997 ₽ <span class="old_price">5 330 ₽</span></td>
                                 </tr>
                                 <tr>
-                                    <td height="12"></td>
+                                    <td height="9"></td>
                                 </tr>
                                 <tr>
-                                    <td align="right" style="padding-right:20px"><a href="#">КУПИТЬ АРОМАТ ⟶</a></td>
-                                    <td align="left" style="padding-left:20px"><a href="#">КУПИТЬ АРОМАТ ⟶</a></td>
+                                    <td align="right" style="padding-right:20px; font-size: 11px; letter-spacing: 2.1px;"><a href="#">КУПИТЬ АРОМАТ ⟶</a></td>
+                                    <td align="left" style="padding-left:20px; font-size: 11px; letter-spacing: 2.1px;"><a href="#">КУПИТЬ АРОМАТ ⟶</a></td>
                                 </tr>
                             </table>
                             <table cellpadding="0" cellspacing="0" align="center" class="purchase__mobile">
-                                <tr align="center"><td align="center"><img src="img/img1.png" width="270" height="270"></td></tr>
+                                <tr align="center"><td align="center"><img src="img/img1.png" width="200" height="200"></td></tr>
                                 <tr><td height="10"></td></tr>
                                 <tr><td align="center" class="suptitle-2">ПАРФЮМЕРНАЯ ВОДА</td></tr>
                                 <tr><td align="center" class="title-3">Lancôme Idôle / 50 мл</td></tr>
@@ -439,7 +561,7 @@
                                 
                                 <tr><td height="30"></td></tr>
 
-                                <tr><td align="center"><img src="img/img2.png" width="270" height="270"></td></tr>
+                                <tr><td align="center"><img src="img/img2.png" width="200" height="200"></td></tr>
                                 <tr><td height="10"></td></tr>
                                 <tr><td align="center" class="suptitle-2">ПАРФЮМЕРНАЯ ВОДА</td></tr>
                                 <tr><td align="center" class="title-3">Lancôme Idôle / 25 мл</td></tr>
@@ -448,50 +570,72 @@
                         </td>
                     </tr>
                     <tr class="desktop">
-                        <td height="112"></td>
+                        <td height="111"></td>
                     </tr>
                     <tr class="mobile">
-                        <td height="70"></td>
+                        <td height="74"></td>
                     </tr>
                     <tr>
                         <td>
-                            <table cellpadding="0" cellspacing="0" class="580" align="center" bgcolor="#FFE9DA">
-                                <tr>
+                            <table cellpadding="0" cellspacing="0" class="table-580" align="center" bgcolor="#FFE9DA" >
+                                <tr class="desktop">
+                                    <td height="29"></td>
+                                </tr>
+                                <tr class="mobile">
                                     <td height="30"></td>
                                 </tr>
                                 <tr>
-                                    <td class="suptitle-2 wrapper" align="center">
+                                    <td class="suptitle-2 wrapper" align="center" style="letter-spacing: 1.4px">
                                         ПРОМОКОД
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="desktop" align="center">
                                     <td class="title wrapper" align="center">
                                         SUMMER
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td height="5">
-
+                                <tr class="mobile" align="center">
+                                    <td class="title wrapper" align="center" style="font-size: 45px;">
+                                        SUMMER
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="desktop">
+                                    <td height="4"></td>
+                                </tr>
+                                <tr class="mobile">
+                                    <td height="7"></td>
+                                </tr>
+                                <tr class="desktop" align="center">
                                     <td align="center" class="wrapper">
-                                        <p>
+                                        <p style="font-size: 14px; letter-spacing: 0.1px;">
+                                            дарим 300 ₽ при оформлении заказа от 3000 ₽*<br/> без учёта доставки
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr class="mobile" align="center">
+                                    <td align="center" class="wrapper">
+                                        <p style="font-size: 14px; letter-spacing: 0.1px;">
                                             дарим 300 ₽ при оформлении заказа от 3000 ₽* без учёта доставки
                                         </p>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td height="15"></td>
+                                <tr class="desktop">
+                                    <td height="12"></td>
+                                </tr>
+                                <tr class="mobile">
+                                    <td height="22"></td>
                                 </tr>
                                 <tr>
-                                    <td align="center" class="wrapper"><a href="#" class="btn btn_white">применить промо-код</a></td>
+                                    <td align="center" class="btn_wrapper"><a href="#" class="btn btn_white">применить промо-код</a></td>
                                 </tr>
-                                <tr>
+                                <tr class="desktop">
                                     <td height="18" align="center"></td>
                                 </tr>
+                                <tr class="mobile">
+                                    <td height="13" align="center"></td>
+                                </tr>
                                 <tr>
-                                    <td class="suptitle-2 wrapper" align="center">* Код действителен после применения скидки</td>
+                                    <td class="suptitle-2 wrapper" align="center" style="letter-spacing: 0.1px;">* Код действителен после применения скидки</td>
                                 </tr>
                                 <tr>
                                     <td height="20"></td>
@@ -500,7 +644,7 @@
                         </td>
                     </tr>
                     <tr class="desktop">
-                        <td height="115"></td>
+                        <td height="94"></td>
                     </tr>
                     <tr class="mobile">
                         <td height="70"></td>
@@ -519,7 +663,7 @@
                                 </tr>
                                 <tr class="socials_column">
                                     <td>
-                                        <table cellpadding="0" cellspacing="0" width="220" class="social-1">
+                                        <table cellpadding="0" cellspacing="0" width="230" class="social-1">
                                             <tr class="socials">
                                                 <td><a href="#"><img src="img/socials/facebook.png" height="18"></a></td>
                                                 <td><a href="#"><img src="img/socials/odnoklassniki.png" width="11" height="18"></a></td>
@@ -527,39 +671,42 @@
                                                 <td><a href="#"><img src="img/socials/instagram.png" width="17" height="17"></a></td>
                                             </tr>
                                             <tr>
-                                                <td height="20" width="220"></td>
+                                                <td height="37" width="220"></td>
                                             </tr>
                                             <tr>
-                                                <td width="220">
-                                                    <p color="#ffffff" style="line-height: 16px">
+                                                <td width="230">
+                                                    <p color="#ffffff" style="line-height: 16px; font-size: 14px;">
                                                         <a href="#">+7 (495) 123-45-67</a>
                                                     </p>
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td height="6"></td>
+                                            </tr>
+                                            <tr>
                                                 <td class="suptitle-2" color="#ffffff">
-                                                    <a href="#">Служба поддержки</a>
+                                                    <a href="#" style="font-size: 10px;">Служба поддержки</a>
                                                 </td>
                                             </tr>
                                         </table>
                                     </td>
                                     <td style="vertical-align: baseline">
-                                        <table cellpadding="0" cellspacing="0" width="220" class="social-2">
-                                            <tr class="socials">
+                                        <table cellpadding="0" cellspacing="0" width="230" class="social-2">
+                                            <tr class="socials-2">
                                                 <td><a href="#"><img src="img/socials/App_store.png" width="85" height="23"></a></td>
                                                 <td><a href="#"><img src="img/socials/google_play.png" width="93" height="23"></a></td>
                                             </tr>
                                             <tr>
-                                                <td height="40"></td>
+                                                <td height="36"></td>
                                             </tr>
                                             <tr>
-                                                <td class="suptitle-2" width="100%" align="right"><a href="#">Условия пользовательского соглашения</a></td>
+                                                <td class="suptitle-2" width="100%" align="right" style="font-size: 10px;"><a href="#">Условия пользовательского соглашения</a></td>
                                             </tr>
                                             <tr>
                                                 <td height="5"></td>
                                             </tr>
                                             <tr>
-                                                <td class="suptitle-2" width="100%" align="right"><a href="#">Отписаться от рассылки</a></td>
+                                                <td class="suptitle-2" width="100%" align="right" style="font-size: 10px;"><a href="#">Отписаться от рассылки</a></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -572,7 +719,7 @@
                                 <tr>
                                     <td height="35"></td>
                                 </tr>
-                                <tr align="center" style="display: flex; justify-content: space-between; width: 100%;">
+                                <tr align="center" class="social__mobile-1">
                                     <td align="center"><a href="#"><img src="img/socials/facebook.png" height="17"></a></td>
                                     <td align="center"><a href="#"><img src="img/socials/odnoklassniki.png" height="17"></a></td>
                                     <td align="center"><a href="#"><img src="img/socials/vk.png" height="10"></a></td>
@@ -581,24 +728,30 @@
                                 <tr>
                                     <td height="28"></td>
                                 </tr>
-                                <tr align="center" style="display: flex; justify-content: space-between; width: 100%;">
-                                    <td style="width: 99px"><a href="#"><img src="img/socials/App_store.png" width="99"></a></td>
-                                    <td style="width: 116px"><a href="#"><img src="img/socials/google_play.png" width="116"></a></td>
+                                <tr align="center" class="social__mobile-2">
+                                    <td align="center" style="padding-right: 32px;"><a href="#"><img src="img/socials/App_store.png" height="28"></a></td>
+                                    <td align="center"><a href="#"><img src="img/socials/google_play.png" height="28"></a></td>
                                 </tr>
-                                <tr>
-                                    <td height="53"></td>
+                                <tr class="mobile">
+                                    <td height="48"></td>
                                 </tr>
                                 <tr>
                                     <td align="center" class="suptitle-2" color="#ffffff">
-                                        <a href="#">Служба поддержки</a>
+                                        <a href="#" style="font-size: 10px;">Служба поддержки</a>
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td height="7"></td>
+                                </tr>
+                                <tr>
                                     <td align="center" width="220">
-                                        <p color="#ffffff" style="line-height: 16px">
+                                        <p color="#ffffff" style="line-height: 16px; font-size: 15px;">
                                             <a href="#">+7 (495) 123-45-67</a>
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td height="15"></td>
                                 </tr>
                                 <tr>
                                     <td class="suptitle-2" width="100%" align="center"><a href="#">Условия пользовательского соглашения</a></td>
